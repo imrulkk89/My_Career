@@ -1,0 +1,357 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+% \documentclass[a4paper,12pt]{article}
+\documentclass {article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within the experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colors for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Imrul Kais Khan} \\[7.5pt]
+\textbf{Full Stack Developer} \\[5.5pt]
+\href{https://github.com/imrulkk89}{\raisebox{-0.05\height}\faGithub\ imrulkk89} \ $|$ \ 
+\href{https://linkedin.com/in/imrul-kais-khan}{\raisebox{-0.05\height}\faLinkedin\ imrul-kais-khan} \ $|$ \ 
+\href{https://imrul.me}{\raisebox{-0.05\height}\faGlobe \ imrul.me} \ $|$ \ 
+\href{mailto:imrulkaiskhan@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ imrulkaiskhan@gmail.com} \ $|$ \ 
+\href{tel:+8801777078574}{\raisebox{-0.05\height}\faMobile \ +8801777078574} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% Summary SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+Experienced Full Stack Developer offering versatile skills in backend, frontend, cloud services, and data engineering; ready to contribute to a dynamic team with commitment and collaboration.
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Backend Development} & NodeJS, TypeScript, ExpressJS, NestJS, FeathersJS, RESTFul API, Jest, Swagger, OAuth, PubSub, MQTT\\
+  \textbf{Database Management} & MySQL, PostgreSQL, SQLite, MongoDB, DynamoDB, CouchDB, Redis\\ 
+  \textbf{Frontend Development} & HTML5, CSS3, SASS, CSS Module, Bootstrap, JavaScript, ReactJS, VueJS, NuxtJS, Redux, Vuex, Ant Design, Material UI\\ 
+  \textbf{Cloud Services (AWS)} & EC2, VPC, Subnet, NAT, Routing Table, Security Group, IAM, Route53, RDS, S3, Load Balancer, Auto Scaling\\ 
+  \textbf{Cloud Services (GCP)} & Compute Engine, Cloud Network, Cloud DNS, GCS, GKE, BigQuery\\
+  \textbf{DevOps} & Linux Server Administration, VPS, Docker, Kubernetes, Nginx, Github Actions, CI/CD Pipeline, Terraform\\
+  \textbf{Data Engineering} & AirByte, ELT Data Pipeline, Python DBT Tool\\
+  \textbf{Project Management} & Agile Development, JIRA, Azure DevOps, Sprint Planning, Backlog, Tasks, Git Commit, Design Documents\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Backend Developer at \href{https://www.meldcx.com/}{MeldCx}} & \hfill Aug 2022 - Jul 2023 \\[3.75pt]
+\multicolumn{2}{@{} l @{}}{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize} [nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Designed and developed a hotel \textbf{check-in/check-out} application named \textbf{mHotel}, integrating it with various Property Management Software \textbf{(PMS)} utilized by diverse hotels.
+            \item[--] Enabled seamless guest \textbf{check-in/check-out} process, \textbf{eliminating} the need for direct \textbf{interaction} with hotel \textbf{receptionists} and allowing guests to \textbf{check-in/check-out} using their reservation number from the PMS database.
+            \item[--] Developed a \textbf{unified interface} to call \textbf{different API} interfaces and \textbf{standardized} API \textbf{response} transformation for mHotel application.
+            \item[--] Facilitated \textbf{secure transactions} by enabling \textbf{credit card} attachment to the guest's reservation and \textbf{integrating payment} systems with \textbf{Shift4}, a prominent payment processing service.
+            \item[--] Successfully \textbf{developed} the payment processing \textbf{library} for the \textbf{Frontend} in JavaScript, integrating it with the \textbf{Shift4 payment} system while adhering to \textbf{SOLID principles} and utilizing appropriate \textbf{design patterns}.            
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Intermediate Full-stack Engineer at \href{https://www.bitstrapped.com/}{Bitstrapped}} & \hfill Dec 2021 - Jul 2022 \\[3.75pt]  
+\multicolumn{2}{@{} l @{}}{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize} [nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item[--] Worked with \textbf{Google Smart Factory} and provisioned it to \textbf{Boston Dynamic} Cloud using \textbf{Terraform}.
+            \item[--] Enabled \textbf{real-time} data transmission from Boston Dynamic’s \textbf{Spot Robot} to Google Smart Factory via PubSub channel.
+            \item[--] Developed \textbf{Python}-based \textbf{image processing} code for deployment on Boston Dynamic’s Spot Robot.
+            \item[--] Configured Looker-administered Google \textbf{BigQuery} for streamlined data analysis.
+            \item[--] Conducted R\&D on \textbf{Airbyte ELT Tool} and created custom sources and destinations.         
+            \item[--] Designed Google \textbf{Cloud Infrastructure} for efficient data pipeline execution.
+            \item[--] Leveraged Google Container Registry \textbf{(GCR)} to push Airbyte source and destination.
+            \item[--] \textbf{Automated} Airbyte deployment within GCP Infrastructure. 
+            \item[--] Utilized Airbyte custom source to extract \textbf{Spotify} data through API and loaded it into \textbf{Google BigQuery}.
+`           \item[--] \textbf{Partitioning} \& \textbf{Clustering} the \textbf{BigQuery} Table for better performance.
+            \item[--] Extract \textbf{Spotify} data through API using Airbyte custom source.         
+            \item[--] Design various SQL Queries using python \textbf{DBT} Tool for (\textbf{T})ransforming data in \textbf{ELT} process.             
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Full-Stack Developer at \href{https://www.bitstrapped.com/}{BrainStation-23}} & \hfill May 2022 - Nov 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developing a \textbf{Fintech} Application which was connected with different banks in the USA and Mexico.
+        \item[--] Making API calls to different banks and conveying the response to Mobile Applications.
+        \item[--] Code \textbf{refactoring}, code optimization, performance-enhancing, implementing \textbf{design patterns} to improve the code quality.
+        \item[--] Documented all APIs using \textbf{Swagger}.
+        \item[--] Wrote \textbf{Unit Tests} and \textbf{Integration Tests} for all APIs.
+        \item[--] Admin Panel Dashboard \textbf{Frontend} development.
+        \item[--] Project \textbf{Planning}, Design Planning, and \textbf{Requirement Analysis} from Stakeholders.
+        \item[--] Transformed Adobe XD \& \textbf{Figma} design to \textbf{ReactJS} Frontend.
+        \item[--] Used \textbf{TypeScript} to code ReactJS.
+        \item[--] React \textbf{Component} designing.
+        \item[--] Used \textbf{Redux-Thunk} for centralized state management. 
+        \item[--] Used \textbf{Ant-Design} ReactJS library to design the Frontend.
+        \item[--] Implementing complex UI logic, Performance improvement.
+        \item[--] \textbf{Project Management} and \textbf{helping} Jr. Engineers.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Engineering Manager at \href{https://www.linkedin.com/company/civilized-technologies/about/}{Civilized Technologies}} & \hfill Sep 2019 - Mar 2020 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] \textbf{Lead} the total development.
+        \item[--] Planned, Designed, and Developed an \textbf{eCommerce} web application from the \textbf{ground up}. 
+        \item[--] Designed the total \textbf{database schema} as per requirements. 
+        \item[--] Used \textbf{AdonisJS} (NodeJS Framework) for the Backend.
+        \item[--] Integrated \textbf{PayPal} payment method, Email Confirmation, \textbf{OAuth}, ORM, etc.
+        \item[--] Developed Frontend with \textbf{ReactJS} \& \textbf{Redux}.
+        \item[--] Configured Service Worker for \textbf{PWA} capabilities.
+        \item[--] Configured \textbf{Nginx} for both \textbf{ReactJS} and \textbf{NodeJS} App.
+        \item[--] \textbf{Architect} the \textbf{AWS Infrastructure} to run that eCommerce App.
+        \item[--] Configured \textbf{Github Actions} and implemented \textbf{CI/CD} for quick \textbf{deployment}.
+        \item[--] \textbf{Converted} the \textbf{AWS Infrastructure} to \textbf{Terraform} code \textbf{(IaC)} for easy deployment.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Node.js Developer at \href{http://www.carbangla.com/}{CarBangla}(Ride Sharing App)} & \hfill Nov 2018 - Sep 2019 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Planned, Designed, and \textbf{Developed} ride-sharing app backend from the \textbf{ground up}.
+        \item[--] \textbf{Architect} the \textbf{AWS Infrastructure} to run the backend smoothly.
+        \item[--] Designed \textbf{database schema} and \textbf{optimized query} for better performance.
+        \item[--] Developed \textbf{mobile-friendly} RESTFul API.
+        \item[--] Configured various AWS services like \textbf{RDS, S3, EC2} etc with Backend Application. 
+        \item[--] \textbf{Split monolithic} system to \textbf{Micro-Service} based system to handle incoming traffic.
+        \item[--] Implemented \textbf{Geospatial search} and query feature through \textbf{MongoDB}. 
+        \item[--] To get the driver's \textbf{car position} in \textbf{real-time}, implemented an \textbf{MQTT-based} messaging system.
+        \item[--] Also developed many features in the Admin Panel using \textbf{Laravel} to operate the Ride Sharing Business.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Node.js Developer at \href{https://www.korbyt.com/}{Korbyt} (Digital Signage)} & \hfill Feb 2018 - Oct 2018 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developed a \textbf{Digital Signage} app using \textbf{ElectronJS} which runs on an Embedded Windows Machine. 
+        \item[--] Add features to render \textbf{JS-based} animation, and play Ads. videos, run slideshows on schedule.
+        \item[--] Created \textbf{Windows Installer} for that Digital \textbf{Signage App}.
+        \item[--] ElectronJS app \textbf{auto update} and \textbf{remote machine} deployment mechanism development.
+        \item[--] Worked on core Windows features like \textbf{Windows registry} and low-level \textbf{Windows API}.
+        \item[--] Designed a \textbf{Real-Time} Communication Portal named RMG \textbf{InView} using \textbf{ElectronJS} and \textbf{Socket.IO}.
+        \item[--] Implemented new features to RMG’s \textbf{multi-tenanted SAAS} software which was developed using \textbf{Laravel} \& \textbf{PostgreSQL}.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%Projects
+\section{Projects}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{Spot on Factory} & \hfill \href{https://www.bostondynamics.com/}{Client - Boston Dynamics} \\[3.75pt]  
+    \textbf{Tech Stack:} Google Smart Factory, Python, PubSub, MQTT, Docker, Kubernetes, BigQuery \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} I integrated \textbf{Google Smart Factory} with \textbf{Boston Dynamics Spot Robots} to \textbf{detect} factory \textbf{hazards} using \textbf{Machine Learning}. It is a new Google Cloud Manufacturing Solution product aimed at transforming traditional industries into Industry 4.0. My role involved gathering and deploying the Google Smart Factory \textbf{Terraform} code to the Boston Dynamics Google Cloud account. Additionally, I implemented \textbf{real-time} two-way communication between \textbf{Spot Robot} and \textbf{Google Smart Factory}.        
+    }  \\
+    \newline
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{AirByte ETL data pipeline from Spotify to Monstercat} & \hfill \href{https://www.monstercat.com}{Client - Monstercat} \\[3.75pt]     
+    \textbf{Tech Stack:} Docker, AirByte (ELT pipeline), DBT, Golang, Google Cloud, BigQuery, Terraform \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} My responsibility was to design a \textbf{Google Cloud infrastructure} for ELT \textbf{data pipeline}. That Google Cloud infrastructure runs the \textbf{Airbyte (ELT Tool)} system and fetches data from \textbf{Spotify} and writes those data to a \textbf{data warehouse} like \textbf{BigQuery}. After loading the data into a data warehouse, here comes my second responsibility. I had to design an automatic system to Transform the data as per customer requirements for Business Analytics and Machine Learning. Finally, I \textbf{transformed} the \textbf{Google Cloud infrastructure} into a \textbf{Terraform} code.       
+    }  \\
+    \newline
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{ABookStore.co.ke} & \hfill \href{https://github.com/imrulkk89/ABookStore}{Github Repo} \\[3.75pt]    
+    \textbf{Tech Stack:} NodeJs, MySQL, ReactJS, AWS S3, AWS EC2, AWS RDS, OAuth \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} AbookStore is a Kenyan-based Online e-commerce platform that was built with \textbf{ReactJS (Front-end)} and \textbf{NodeJs (Back-end)}. This application is deployed in an \textbf{AWS environment} and also used AWS resources like \textbf{S3, EC2, RDS, etc}. Finally, I \textbf{transformed} the \textbf{AWS infrastructure} into a \textbf{Terraform} code.        
+    }  \\
+    \newline
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{CarBangla (Ride Sharing App)} & \hfill \href{http://www.carbangla.com/}{Home Page} \\[3.75pt]        
+    \textbf{Tech Stack:} NodeJs, MySQL, ReactJS, AWS S3, AWS EC2, AWS RDS, OAuth \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} I was a NodeJS developer there. I worked on back-end development in a Ride-Sharing app named Carbangla. I personally managed and developed 2-3 \textbf{Mirco-Services} which handled \textbf{concurrent user requests}. I also implemented \textbf{MQTT}-based \textbf{pub/sub architecture} to transfer data between the mobile client and server in \textbf{real time}. Also developed various APIs as per requirements, \textbf{Firebase Cloud Messaging} send to specific clients, Admin panel dashboard development (in \textbf{Laravel}) and etc.    
+    }  \\
+    \newline
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{Korbyt in RMG Networks (Digital Signage Solution Provider)} & \hfill \href{https://www.korbyt.com/}{Home Page} \\[3.75pt]    
+    \textbf{Tech Stack:} Laravel, NodeJS, ElectronJS, Windows API, Windows Registry, C\#.NET \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} I worked as a backend and desktop app developer, contributing to two applications: \textbf{Korbyt}, a \textbf{Digital Signage} app built using \textbf{ElectronJS}, and \textbf{InVIEW}, a \textbf{Real-Time} Communication Portal app also based on ElectronJS. In Korbyt, my responsibilities included enabling the software to run digital content like videos, images, and animations downloaded from a remote server. Additionally, I created a \textbf{Windows Installer} for the Embedded Windows version, enabling \textbf{automatic updates}. I also worked on core \textbf{Windows OS} features like \textbf{registry} and low-level \textbf{Windows APIs}. Apart from that, I implemented new features for RMG's \textbf{multi-tenanted SAAS} software, developed using \textbf{Laravel} and \textbf{PostgreSQL}.       
+    }
+    \newline
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2008 - 2012 & BSc. in EEE at \textbf{American International University-Bangladesh} \hfill \normalsize \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	TRAINING
+%----------------------------------------------------------------------------------------
+\section{Training}
+
+    \begin{minipage}[t]{0.7\textwidth}
+        \large \textbf{Google Cloud Associate Cloud Engineer} | \textbf{2022}
+    \end{minipage}
+
+    \begin{minipage}[t]{0.5\textwidth}
+         Training Conducted by: \href{https://poridhi.io/}{Poridhi.io} 
+    \end{minipage}
+
+    \begin{minipage}[t]{0.7\textwidth}
+         \large \textbf{Docker \href{https://kodekloud.com/certificate-verification/73614B2C60-735B546104-735B181BB8/}{Certificate} \& Kubernetes \href{https://kodekloud.com/certificate-verification/73614B2C60-735B5486E3-735B181BB8/}{Certificate}} | \textbf{2022}
+    \end{minipage}
+
+    \begin{minipage}[t]{0.5\textwidth}
+         Course Completed on: \href{https://kodekloud.com/}{KodeKloud}
+    \end{minipage}
+    
+\end{document}
