@@ -1,0 +1,320 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+% \documentclass[a4paper,12pt]{article}
+\documentclass {article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within the experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colors for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+%\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%  {\includegraphics[width=2cm]{Imrul_Kais_Khan.jpeg}}  
+%  \textbf{\href{https://imrul.dev/}{\Huge Imrul Kais Khan}} & \large % %\textbf{Dhaka, Bangladesh} \\
+%  \Large \textbf{Software Engineer} & \textbf{Email} : \href{mailto:imrulkaiskhan@gmail.com}{imrulkaiskhan@gmail.com} \\
+%   \textbf{Github}: \href{https://github.com/imrulkk89}%%%{https://github.com/imrulkk89} & \textbf{LinkedIn}: %\href{https://linkedin.com/in/imrul-kais-khan}{https://linkedin.com/in/imrul-%kais-khan} \\
+%  \textbf{Portfolio}: \href{https://imrul.dev}{https://imrul.dev} & \textbf{Phone} : +8801777078574 \\
+ 
+%\end{tabular*}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \begin{minipage}{0.4\textwidth}
+    \textbf{\href{https://imrul.dev/}{\Huge Imrul Kais Khan}} \\
+    \Large \textbf{Software \& IoT Engineer} \\
+    \textbf{Dhaka, Bangladesh} \\
+    \textbf{Email} : \href{mailto:imrulkaiskhan@gmail.com}{imrulkaiskhan@gmail.com} \\
+  \end{minipage}
+  \begin{minipage}{0.45\textwidth}
+    \textbf{Github}:\href{https://github.com/imrulkk89}{https://github.com/imrulkk89} \\
+    \textbf{LinkedIn}:\href{https://linkedin.com/in/imrul-kais-khan}{https://linkedin.com/in/imrul-kais-khan} \\
+    \textbf{Portfolio}:\href{https://imrul.dev}{https://imrul.dev} \\
+    \textbf{Phone}: +8801777078574 \\
+  \end{minipage}
+  \begin{minipage}{0.15\textwidth}
+    \includegraphics[width=2.5cm]{Imrul_Kais_Khan.jpeg}
+  \end{minipage}
+\end{tabular*}
+
+
+
+%----------------------------------------------------------------------------------------
+% Summary SECTIONS
+%----------------------------------------------------------------------------------------
+
+%Interests/ Keywords/ Summary
+\section{Summary}
+IoT and Software Engineer with more than 5 years of experience offering versatile skills in backend, frontend, cloud services, embedded system, and PCB designing; ready to contribute to a dynamic team with commitment and collaboration.
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+  \textbf{Backend Development} & NodeJS, TypeScript, ExpressJS, NestJS, OAuth, Jest, Swagger, MQTT\\
+  \textbf{Database Management} & MySQL, PostgreSQL, SQLite, MongoDB, Redis\\ 
+  \textbf{Frontend Development} & SASS, CSS Module, ReactJS, VueJS, Redux, Vuex, Ant Design, Material UI\\ 
+  \textbf{Cloud Services (AWS)} & EC2, VPC, Subnet, NAT, Routing Table, Security Group, IAM, Route53, RDS, S3, Load Balancer\\ 
+  \textbf{Cloud Services (GCP)} & Compute Engine, Cloud Network, Cloud DNS, GCS, GKE, BigQuery\\
+  \textbf{DevOps} & Linux Server, Docker, Kubernetes, Nginx,  Terraform, Github Actions, CI/CD Pipeline\\
+  \textbf{Embedded System \& PCB} & AVR MCU, STM32 MCU, Arduino, ESP32, KiCad, Altium Designer\\
+  \textbf{Project Management} & Agile Development, JIRA, Azure DevOps, Sprint Planning, Tasks, Git Commit, Design Documents\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+%Experience
+\section{Work Experience}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Senior Backend Engineer at \href{https://www.meldcx.com/}{MeldCx}} [Australia] [Liaison Office] & \hfill Aug 2022 - Jul 2023 \\[3.75pt]
+\multicolumn{2}{@{} l @{}}{
+    \begin{minipage}[t]{\linewidth}
+        \begin{itemize} [nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+            \item Designed and launched the mHotel application, streamlining hotel check-in/check-out   
+                  processes by integrating with various Property Management Software (PMS).
+            \item Implemented a self-check-in/check-out feature, reducing guest wait times and enhancing 
+                  satisfaction.
+            \item Standardized API response transformation, improving efficiency and consistency across 
+                  different API interfaces.
+            \item Enhanced transaction security by integrating payment systems with Shift4, ensuring encrypted credit card attachment to hotel reservations.   
+            \item Developed a robust payment processing library for the Frontend in JavaScript, adhering to SOLID principles and design patterns, enhancing payment reliability.
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Intermediate Full-stack Engineer at \href{https://www.bitstrapped.com/}{Bitstrapped}} [Canada][Remote] & \hfill Dec 2021 - Jul 2022 \\[3.75pt]  
+\multicolumn{2}{@{} l @{}}{
+    \begin{minipage}[t]{\linewidth}
+         \begin{itemize} [nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+           \item Provisioned Google Smart Factory 4.0 to Boston Dynamic Cloud using Terraform.
+           \item Enabled real-time data transmission from Boston Dynamic's Spot Robot to Google Smart Factory via PubSub channel.
+           \item Developed Python-based image processing code for deployment on Boston Dynamic's Spot Robot.
+           \item Conducted R\&D on Airbyte ETL Tool, creating custom sources and destinations.
+           \item Designed Google Cloud Infrastructure for efficient data pipeline execution.
+           \item Leveraged Google Container Registry (GCR) to push Airbyte source and destination.
+           \item Automated Airbyte deployment within GCP Infrastructure.
+           \item Extracted Spotify data through API using Airbyte custom source and designed SQL queries using Python DBT Tool for data transformation in ETL process.           
+        \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Full-Stack Engineer at \href{https://brainstation-23.com/}{BrainStation-23}} [Dhaka, Bangladesh] & \hfill May 2020 - Nov 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Engineered a Fintech Application linking banks in the USA and Mexico.
+        \item Translated Adobe XD \& Figma designs into ReactJS frontend interfaces.
+        \item Documented all APIs using Swagger and wrote Unit Tests and Integration Tests.
+        \item Assisted in project management and mentored junior engineers.    
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Engineer at \href{http://www.carbangla.com/}{CarBangla}(Ride Sharing App)} [Dhaka, Bangladesh] & \hfill Nov 2018 - Mar 2020 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Developed an eCommerce and ride-sharing app backend from the ground up, architecting AWS Infrastructure for smooth operation.
+        \item Designed the database schema, integrated PayPal payment, Email Confirmation, OAuth, and implemented mobile-friendly RESTFul API.
+        \item Developed Frontend with ReactJS \& Redux, enabled PWA capabilities with Service Worker and configured Nginx for both
+ReactJS and NodeJS App.
+        \item Implemented Geospatial search and query through MongoDB and real-time driver tracking using MQTT.
+        \item  Configured various AWS Services like RDS, S3, EC2, and transitioned from a monolithic to a Micro-service based system. 
+        \item Implemented CI/CD with Github Actions.
+        \item Tuned the AWS Infrastructure to handle 100,000 requests per day.
+        \item Converted AWS Infrastructure to Terraform code for seamless deployment.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Node.js Engineer at \href{https://www.korbyt.com/}{Korbyt} (Digital Signage)} [USA] [Contract] & \hfill Feb 2018 - Oct 2018 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item Developed a Digital Signage app using ElectronJS for Embedded Windows Machines.
+        \item Added features for rendering animations, playing Ads, videos, and slideshows on schedule.
+        \item Worked on core Windows features like Windows registry and low-level Windows API.
+        \item Designed a Real-Time Communication Portal named RMG InView using ElectronJS and Socket.IO.
+        \item Contributed to RMG's Admin Panel developed using Laravel \& PostgreSQL.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{ABookStore.co.ke} & \hfill \href{https://github.com/imrulkk89/ABookStore}{Github} \\[3.75pt]  
+    \textbf{Tech Stack:} Node.js, React.js, MySQL, OAuth, AWS, Terraform\\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} Architected "AbookStore," a Kenyan e-commerce platform, using ReactJS (front-end) and NodeJs (back-end). Deployed and optimized on AWS using services like S3, EC2, and RDS. Converted the AWS setup into Terraform code to boost deployability and scalability.        
+    }  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{CarBangla (Ride sharing App)} & \hfill \href{https://play.google.com/store/apps/details?id=com.carbangla.user\&hl=en\&gl=US\&pli=1} {Playstore} \\[3.75pt]  
+    \textbf{Tech Stack:} Node.js, TypeScript, MySQL, MongoDB, Laravel, AWS, Terraform\\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} Managed and developed Micro-Services, implemented MQTT-based pub/sub architecture and developed various APIs, admin panel dashboard, and more.        
+    }  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+    \Large\textbf{NidleIoT (1st Prototype and MVP)} & \hfill \href{https://www.intellier.com/}{Client - Intellier} \\[3.75pt]  
+    \textbf{Tech:} ATmega1284p, ESP8266, LCD ILI9341, Arduino Framework, Proteus, KiCAD \\[3.75pt]
+    \multicolumn{2}{@{}X@{}}{
+        \textbf{Description:} Research, designed, and developed an IoT-based product to track garment swing operation in real time. Using this smart solution, factories can track, optimize, and digitize their operations in a real-time dashboard, from any location, to enhance efficiency and quality, and reduce production waste.         
+    }  \\
+\end{tabularx}
+
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+BSc. in EEE at \textbf{American International University-Bangladesh} \hfill \normalsize \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	TRAINING
+%----------------------------------------------------------------------------------------
+\section{Training}
+
+    \begin{minipage}[t]{0.7\textwidth}
+        \large \textbf{Google Cloud Associate Cloud Engineer} | \textbf{2022}
+    \end{minipage}
+
+    \begin{minipage}[t]{0.5\textwidth}
+         Training Conducted by: \href{https://poridhi.io/}{Poridhi.io} 
+    \end{minipage}
+
+    \begin{minipage}[t]{0.7\textwidth}
+         \large \textbf{Docker \href{https://kodekloud.com/certificate-verification/73614B2C60-735B546104-735B181BB8/}{Certificate} \& Kubernetes \href{https://kodekloud.com/certificate-verification/73614B2C60-735B5486E3-735B181BB8/}{Certificate}} | \textbf{2022}
+    \end{minipage}
+
+    \begin{minipage}[t]{0.5\textwidth}
+         Course Completed on: \href{https://kodekloud.com/}{KodeKloud}
+    \end{minipage}    
+    
+\end{document}
